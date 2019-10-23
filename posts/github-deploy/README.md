@@ -6,6 +6,13 @@
 
 ## 1. Key 생성
 
+```bash
+ps aux | grep teamcity
+```
+
+저같은 경우 이미 Teamcity 실행자를 ```teamcity```로 진행했기 때문에 실행자는 ```teamcity``` 입니다.  
+  
+해당 사용자로 현재 로그인 사용자를 변경하겠습니다.
 
 ```bash
 sudo su - teamcity
@@ -43,3 +50,10 @@ drwxr-xr-x 14 teamcity teamcity 4096 Sep  8 05:39 ..
 ```bash
 cat github_teamcity-in-action.pub
 ```
+
+
+![github1](./images/github1.png)
+
+![github2](./images/github2.png)
+
+![github3](./images/github3.png)
