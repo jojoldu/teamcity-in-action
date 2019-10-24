@@ -57,3 +57,14 @@ cat github_teamcity-in-action.pub
 ![github2](./images/github2.png)
 
 ![github3](./images/github3.png)
+
+## 3. Deploy
+
+## 4. 왜 private Key 등록없이 사용 가능할까?
+
+```bash
+-bash-4.2$ cd ~/.ssh
+-bash-4.2$ ll
+-rw------- 1 teamcity teamcity 1675 Sep  8 05:42 github_teamcity-in-action
+-rw-r--r-- 1 teamcity teamcity  407 Sep  8 05:42 github_teamcity-in-action.pub
+```
