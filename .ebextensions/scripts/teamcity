@@ -1,0 +1,38 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          teamcity
+# Required-Start:    $local_fs
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: TeamCity
+# Description:       TeamCity
+### END INIT INFO
+
+TEAMCITY_USER=teamcity
+TEAMCITY_DIR=/var/lib/teamcity
+TEAMCITY_PATH=$TEAMCITY_DIR/bin/runAll.sh
+TEAMCITY_DATA_DIR=$TEAMCITY_DIR/.BuildServer
+
+case $1 in
+
+  start)
+    echo "Starting Team City"
+    su - $TEAMCITY_USER -c "TEAMCITY_DATA_PATH=$TEAMCITY_DATA_DIR $TEAMCITY_PATH start"
+    ;;
+  stop)
+    echo "Stopping Team City"
+    su - $TEAMCITY_USER -c "TEAMCITY_DATA_PATH=$TEAMCITY_DATA_DIR $TEAMCITY_PATH stop"
+    ;;
+  restart)
+    echo "Restarting Team City"
+    su - $TEAMCITY_USER -c "TEAMCITY_DATA_PATH=$TEAMCITY_DATA_DIR $TEAMCITY_PATH stop"
+    su - $TEAMCITY_USER -c "TEAMCITY_DATA_PATH=$TEAMCITY_DATA_DIR $TEAMCITY_PATH start"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/teamcity {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0
